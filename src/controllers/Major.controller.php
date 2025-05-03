@@ -1,6 +1,6 @@
 <?php
-include_once("../config/connection.php");
-include_once("../models/Major.class.php");
+include_once(__DIR__ . "/../config/connection.php");
+include_once(__DIR__ . "/../models/Major.class.php");
 
 class MajorController{
     private $db;

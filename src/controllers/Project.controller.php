@@ -1,6 +1,6 @@
 <?php
-include_once("../config/connection.php");
-include_once("../models/Project.class.php");
+include_once(__DIR__ . "/../config/connection.php");
+include_once(__DIR__ . "/../models/Project.class.php");
 
 class ProjectController{
     private $db;

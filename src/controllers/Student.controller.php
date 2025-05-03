@@ -1,6 +1,6 @@
 <?php
-include_once("../config/connection.php");
-include_once("../models/Student.class.php");
+include_once(__DIR__ . "/../config/connection.php");
+include_once(__DIR__ . "/../models/Student.class.php");
 
 class StudentController{
     private $db;
