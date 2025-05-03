@@ -72,3 +72,4 @@ Halaman jurusan memungkinkan pengguna untuk:
 
 ## Dokumentasi
 Berikut demo websitenya:
+![demo video](screenshots/demovideo.gif)
