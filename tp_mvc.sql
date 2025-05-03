@@ -12,13 +12,13 @@ CREATE TABLE majors (
 CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    nim VARCHAR(50) NOT NULL UNIQUE, -- Assuming NIM should be unique
+    nim VARCHAR(50) NOT NULL UNIQUE, 
     phone VARCHAR(20) NOT NULL,
     join_date DATE NOT NULL,
-    major_id INT, -- Added major_id column
+    major_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (major_id) REFERENCES majors(major_id) ON DELETE SET NULL ON UPDATE CASCADE -- Added foreign key constraint
+    FOREIGN KEY (major_id) REFERENCES majors(major_id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 CREATE TABLE projects (
@@ -30,8 +30,8 @@ CREATE TABLE projects (
     student_id INT,
     major_id INT,
     status ENUM('Planned', 'Ongoing', 'Completed') DEFAULT 'Planned',
-    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    FOREIGN KEY (major_id) REFERENCES majors(major_id) ON DELETE SET NULL ON UPDATE CASCADE
+    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE RESTRICT ON UPDATE CASCADE, 
+    FOREIGN KEY (major_id) REFERENCES majors(major_id) ON DELETE RESTRICT ON UPDATE CASCADE 
 );
 
 INSERT INTO majors (major_code, major_name) VALUES
